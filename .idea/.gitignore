@@ -39,3 +39,6 @@ out/
 *.iml
 *.ipr
 *.iws
+
+#Properties
+properties.properties
