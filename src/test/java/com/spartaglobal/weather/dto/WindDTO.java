@@ -1,4 +1,6 @@
 package com.spartaglobal.weather.dto;
 
-public class WindDTO {
+public class WindDTO
+{
+
 }
