@@ -88,18 +88,43 @@ public class CoordDTOTest {
                 Assertions.assertFalse(coordDTO.isLonWithinBounds());
             }
         }
+
+        @Nested
+        @DisplayName("Test isCoords Correct")
+        class isCoords {
+            //TODO: Implement me
+        }
+
     }
 
     @Nested
     @DisplayName("Testing getters")
     class getter {
-
+        @Test
+        @DisplayName("Test Lon has a value")
+        void testLonHasAValue() {
+            Assertions.assertNotNull(coordDTO.getLon());
+        }
+        @Test
+        @DisplayName("Test Lat has a value")
+        void testLatHasAValue() {
+            Assertions.assertNotNull(coordDTO.getLat());
+        }
     }
 
     @Nested
     @DisplayName("Testing Types")
     class types {
-
+        @Test
+        @DisplayName("Test Lon is Double")
+        void testLonIsDouble() {
+            Assertions.assertEquals(Double.class, coordDTO.getLon().getClass());
+        }
+        @Test
+        @DisplayName("Test Lat is Double")
+        void testLatIsDouble() {
+            Assertions.assertEquals(Double.class, coordDTO.getLat().getClass());
+        }
     }
 
 
