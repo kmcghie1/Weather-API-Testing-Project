@@ -19,6 +19,7 @@
       <list>
         <option value="Interface" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -31,7 +32,9 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1yBNvCqpIoLcSmSTqwhv44tDAs0" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -94,11 +97,5 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
-  </component>
-  <component name="VcsManagerConfiguration">
-    <MESSAGE value="Created ICoordDTO (Interface for CoordDTO)" />
-    <MESSAGE value="Created CoordDTO using jsonschema2pojo" />
-    <MESSAGE value="Added fucntionallity to following helper methods:&#10;&#10;isLatWithinBounds&#10;isLonWithinBounds&#10;isLatLonWithinBounds" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added fucntionallity to following helper methods:&#10;&#10;isLatWithinBounds&#10;isLonWithinBounds&#10;isLatLonWithinBounds" />
   </component>
 </project>
