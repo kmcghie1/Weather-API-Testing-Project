@@ -5,9 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a34c503b-4999-4119-a960-768048de4716" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,12 +16,19 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
-        <option value="Interface" />
+        <option value="JUnit5 Test Class" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2020.2.3\plugins\maven\lib\maven3" />
+      </MavenGeneralSettings>
+    </option>
   </component>
   <component name="ProjectId" id="1yBNvCqpIoLcSmSTqwhv44tDAs0" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -35,28 +40,61 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="JAVA" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
+    <property name="settings.editor.selected.configurable" value="configurable.group.appearance" />
   </component>
   <component name="RecentsManager">
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="com.spartaglobal.weather.dto" />
+    </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\SpartaGlobal\Course\APITestingExample\untitled\Weather-API-Testing-Framework" />
     </key>
   </component>
-  <component name="RunManager">
-    <configuration name="Scratch" type="Java Scratch" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Scratch" />
-      <option name="SCRATCH_FILE_URL" value="file://$APPLICATION_CONFIG_DIR$/scratches/scratch_12.java" />
+  <component name="RunManager" selected="JUnit.SystemDTOTest.testTypeIsOneORTwo">
+    <configuration name="SystemDTOTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Weather-API-Testing-Project" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.spartaglobal.weather.dto.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.spartaglobal.weather.dto" />
+      <option name="MAIN_CLASS_NAME" value="com.spartaglobal.weather.dto.SystemDTOTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SystemDTOTest.testTypeIsOneORTwo" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Weather-API-Testing-Project" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.spartaglobal.weather.dto.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.spartaglobal.weather.dto" />
+      <option name="MAIN_CLASS_NAME" value="com.spartaglobal.weather.dto.SystemDTOTest" />
+      <option name="METHOD_NAME" value="testTypeIsOneORTwo(int)" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Java Scratch.Scratch" />
+        <item itemvalue="JUnit.SystemDTOTest.testTypeIsOneORTwo" />
+        <item itemvalue="JUnit.SystemDTOTest" />
       </list>
     </recent_temporary>
   </component>
@@ -82,5 +120,35 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="446" y="47" key="#com.intellij.ide.util.MemberChooser" timestamp="1631785327839">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="446" y="47" key="#com.intellij.ide.util.MemberChooser/0.0.1280.680/-1920.-103.1920.1040@0.0.1280.680" timestamp="1631785327839" />
+    <state width="1237" height="163" key="GridCell.Tab.0.bottom" timestamp="1631791114790">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1237" height="163" key="GridCell.Tab.0.bottom/0.0.1280.680/-1920.-103.1920.1040@0.0.1280.680" timestamp="1631791114790" />
+    <state width="1237" height="163" key="GridCell.Tab.0.center" timestamp="1631791114789">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1237" height="163" key="GridCell.Tab.0.center/0.0.1280.680/-1920.-103.1920.1040@0.0.1280.680" timestamp="1631791114789" />
+    <state width="1237" height="163" key="GridCell.Tab.0.left" timestamp="1631791114789">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1237" height="163" key="GridCell.Tab.0.left/0.0.1280.680/-1920.-103.1920.1040@0.0.1280.680" timestamp="1631791114789" />
+    <state width="1237" height="163" key="GridCell.Tab.0.right" timestamp="1631791114790">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1237" height="163" key="GridCell.Tab.0.right/0.0.1280.680/-1920.-103.1920.1040@0.0.1280.680" timestamp="1631791114790" />
+    <state x="142" y="0" key="SettingsEditor" timestamp="1631790919200">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="142" y="0" key="SettingsEditor/0.0.1280.680/-1920.-103.1920.1040@0.0.1280.680" timestamp="1631790919200" />
+    <state x="412" y="31" key="com.intellij.testIntegration.createTest.CreateTestDialog" timestamp="1631790219752">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="412" y="31" key="com.intellij.testIntegration.createTest.CreateTestDialog/0.0.1280.680/-1920.-103.1920.1040@0.0.1280.680" timestamp="1631790219752" />
   </component>
 </project>

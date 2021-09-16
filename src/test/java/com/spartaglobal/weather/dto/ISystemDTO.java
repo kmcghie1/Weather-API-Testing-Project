@@ -7,8 +7,8 @@ public interface ISystemDTO {
     String getCountry();
     Long getSunrise();
     Long getSunset();
-    Boolean isTypeWithinBoundaries(int lower, int upper);
-    Boolean isIdWithinBoundaries(int lower, int upper);
+    Boolean isTypeWithinBoundaries(int typeValue);
+    Boolean isIdWithinBoundaries(int idValue);
     Boolean isCountryTwoLetters(String countryCode);
     Boolean isSunriseTenDigits(Long time);
     Boolean isSunsetTenDigits(Long time);
