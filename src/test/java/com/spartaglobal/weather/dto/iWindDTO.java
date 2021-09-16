@@ -14,4 +14,10 @@ public interface iWindDTO
     boolean isWithinLimits(Integer upper, Integer lower, Integer value);
 
     boolean isWithinLimits(Double upper, Double lower, Double value);
+
+    boolean isGreaterThanZero(int value);
+
+    boolean isGreaterThanZero(Double value);
+
+
 }

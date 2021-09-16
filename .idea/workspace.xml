@@ -5,7 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a34c503b-4999-4119-a960-768048de4716" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/spartaglobal/weather/dto/WindDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/spartaglobal/weather/dto/WindDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/spartaglobal/weather/dto/iWindDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/spartaglobal/weather/dto/iWindDTO.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
