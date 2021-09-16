@@ -4,8 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="736cff97-d231-4e04-a915-418d8ed1e52d" name="Default Changelist" comment="">
+    <list default="true" id="a34c503b-4999-4119-a960-768048de4716" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/spartaglobal/weather/dto/SystemDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/spartaglobal/weather/dto/SystemDTO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/spartaglobal/weather/dto/SystemDTOTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/spartaglobal/weather/dto/SystemDTOTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -60,8 +61,8 @@
       <recent name="D:\SpartaGlobal\Course\APITestingExample\untitled\Weather-API-Testing-Framework" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.SystemDTOTest.testIfSunriseIs10DigitsLong">
-    <configuration name="SystemDTOTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.SystemDTOTest.testSunriseIsBeforeSunsetFails">
+    <configuration name="SystemDTOTest.testSunriseIsBeforeSunset (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Weather-API-Testing-Project" />
       <extension name="coverage">
         <pattern>
@@ -71,12 +72,13 @@
       </extension>
       <option name="PACKAGE_NAME" value="com.spartaglobal.weather.dto" />
       <option name="MAIN_CLASS_NAME" value="com.spartaglobal.weather.dto.SystemDTOTest" />
-      <option name="TEST_OBJECT" value="class" />
+      <option name="METHOD_NAME" value="testSunriseIsBeforeSunset" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SystemDTOTest.testIfSunriseIs10DigitsLong" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="SystemDTOTest.testSunriseIsBeforeSunsetFails" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Weather-API-Testing-Project" />
       <extension name="coverage">
         <pattern>
@@ -86,7 +88,39 @@
       </extension>
       <option name="PACKAGE_NAME" value="com.spartaglobal.weather.dto" />
       <option name="MAIN_CLASS_NAME" value="com.spartaglobal.weather.dto.SystemDTOTest" />
-      <option name="METHOD_NAME" value="testIfSunriseIs10DigitsLong(long)" />
+      <option name="METHOD_NAME" value="testSunriseIsBeforeSunsetFails" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SystemDTOTest.testSunriseTimeIsTenDigits" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Weather-API-Testing-Project" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.spartaglobal.weather.dto.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.spartaglobal.weather.dto" />
+      <option name="MAIN_CLASS_NAME" value="com.spartaglobal.weather.dto.SystemDTOTest" />
+      <option name="METHOD_NAME" value="testSunriseTimeIsTenDigits(java.lang.Long)" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SystemDTOTest.testSunsetTimeIsTenDigits" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Weather-API-Testing-Project" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.spartaglobal.weather.dto.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.spartaglobal.weather.dto" />
+      <option name="MAIN_CLASS_NAME" value="com.spartaglobal.weather.dto.SystemDTOTest" />
+      <option name="METHOD_NAME" value="testSunsetTimeIsTenDigits(java.lang.Long)" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -110,9 +144,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.SystemDTOTest.testIfSunriseIs10DigitsLong" />
+        <item itemvalue="JUnit.SystemDTOTest.testSunriseIsBeforeSunsetFails" />
+        <item itemvalue="JUnit.SystemDTOTest.testSunriseIsBeforeSunset (1)" />
+        <item itemvalue="JUnit.SystemDTOTest.testSunriseTimeIsTenDigits" />
+        <item itemvalue="JUnit.SystemDTOTest.testSunsetTimeIsTenDigits" />
         <item itemvalue="JUnit.SystemDTOTest.testTypeIsOneORTwo" />
-        <item itemvalue="JUnit.SystemDTOTest" />
       </list>
     </recent_temporary>
   </component>
@@ -138,5 +174,51 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="446" y="47" key="#com.intellij.ide.util.MemberChooser" timestamp="1631785327839">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="446" y="47" key="#com.intellij.ide.util.MemberChooser/0.0.1280.680/-1920.-103.1920.1040@0.0.1280.680" timestamp="1631785327839" />
+    <state width="1237" height="163" key="GridCell.Tab.0.bottom" timestamp="1631804827439">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1237" height="163" key="GridCell.Tab.0.bottom/0.0.1280.680/-1920.-103.1920.1040@0.0.1280.680" timestamp="1631804827439" />
+    <state width="1237" height="163" key="GridCell.Tab.0.center" timestamp="1631804827439">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1237" height="163" key="GridCell.Tab.0.center/0.0.1280.680/-1920.-103.1920.1040@0.0.1280.680" timestamp="1631804827439" />
+    <state width="1237" height="163" key="GridCell.Tab.0.left" timestamp="1631804827438">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1237" height="163" key="GridCell.Tab.0.left/0.0.1280.680/-1920.-103.1920.1040@0.0.1280.680" timestamp="1631804827438" />
+    <state width="1237" height="163" key="GridCell.Tab.0.right" timestamp="1631804827439">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1237" height="163" key="GridCell.Tab.0.right/0.0.1280.680/-1920.-103.1920.1040@0.0.1280.680" timestamp="1631804827439" />
+    <state width="1237" height="204" key="GridCell.Tab.1.bottom" timestamp="1631796402147">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1237" height="204" key="GridCell.Tab.1.bottom/0.0.1280.680/-1920.-103.1920.1040@0.0.1280.680" timestamp="1631796402147" />
+    <state width="1237" height="204" key="GridCell.Tab.1.center" timestamp="1631796402147">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1237" height="204" key="GridCell.Tab.1.center/0.0.1280.680/-1920.-103.1920.1040@0.0.1280.680" timestamp="1631796402147" />
+    <state width="1237" height="204" key="GridCell.Tab.1.left" timestamp="1631796402147">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1237" height="204" key="GridCell.Tab.1.left/0.0.1280.680/-1920.-103.1920.1040@0.0.1280.680" timestamp="1631796402147" />
+    <state width="1237" height="204" key="GridCell.Tab.1.right" timestamp="1631796402147">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state width="1237" height="204" key="GridCell.Tab.1.right/0.0.1280.680/-1920.-103.1920.1040@0.0.1280.680" timestamp="1631796402147" />
+    <state x="142" y="0" key="SettingsEditor" timestamp="1631790919200">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="142" y="0" key="SettingsEditor/0.0.1280.680/-1920.-103.1920.1040@0.0.1280.680" timestamp="1631790919200" />
+    <state x="412" y="31" key="com.intellij.testIntegration.createTest.CreateTestDialog" timestamp="1631790219752">
+      <screen x="0" y="0" width="1280" height="680" />
+    </state>
+    <state x="412" y="31" key="com.intellij.testIntegration.createTest.CreateTestDialog/0.0.1280.680/-1920.-103.1920.1040@0.0.1280.680" timestamp="1631790219752" />
   </component>
 </project>
