@@ -68,4 +68,19 @@ public class MainDTOTest {
         }
     }
 
+    @Nested
+    @DisplayName("Min and Max Tests")
+    class minMaxTests {
+        @Test
+        @DisplayName("Min Less Than Max Test")
+        void minLessThanMaxTest() {
+            Assertions.assertTrue(mainDTO.isMinTempLessThanMaxTemp());
+        }
+    }
+
+    @Nested
+    @DisplayName("Limit Tests")
+    class LimitTests {
+
+    }
 }
