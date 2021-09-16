@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a34c503b-4999-4119-a960-768048de4716" name="Default Changelist" comment="Created CoordDTO using jsonschema2pojo">
+    <list default="true" id="a34c503b-4999-4119-a960-768048de4716" name="Default Changelist" comment="Added fucntionallity to following helper methods:&#10;&#10;isLatWithinBounds&#10;isLonWithinBounds&#10;isLatLonWithinBounds">
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/spartaglobal/weather/dto/CoordDTOTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/spartaglobal/weather/dto/CoordDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/spartaglobal/weather/dto/CoordDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,8 +17,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -72,7 +73,14 @@
       <option name="project" value="LOCAL" />
       <updated>1631785119098</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Added fucntionallity to following helper methods:&#10;&#10;isLatWithinBounds&#10;isLonWithinBounds&#10;isLatLonWithinBounds">
+      <created>1631786043194</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1631786043194</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -90,6 +98,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Created ICoordDTO (Interface for CoordDTO)" />
     <MESSAGE value="Created CoordDTO using jsonschema2pojo" />
-    <option name="LAST_COMMIT_MESSAGE" value="Created CoordDTO using jsonschema2pojo" />
+    <MESSAGE value="Added fucntionallity to following helper methods:&#10;&#10;isLatWithinBounds&#10;isLonWithinBounds&#10;isLatLonWithinBounds" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added fucntionallity to following helper methods:&#10;&#10;isLatWithinBounds&#10;isLonWithinBounds&#10;isLatLonWithinBounds" />
   </component>
 </project>
