@@ -1,4 +1,79 @@
 package com.spartaglobal.weather.dto;
 
-public class CoordDTO {
+import java.util.HashMap;
+import java.util.Map;
+import javax.annotation.Generated;
+import com.fasterxml.jackson.annotation.JsonAnyGetter;
+import com.fasterxml.jackson.annotation.JsonAnySetter;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonInclude;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+
+@JsonInclude(JsonInclude.Include.NON_NULL)
+@JsonPropertyOrder({
+        "lon",
+        "lat"
+})
+@Generated("jsonschema2pojo")
+public class CoordDTO implements ICoordDTO {
+
+    @JsonProperty("lon")
+    private Double lon;
+    @JsonProperty("lat")
+    private Double lat;
+    @JsonIgnore
+    private Map<String, Object> additionalProperties = new HashMap<String, Object>();
+
+    @JsonProperty("lon")
+    public Double getLon() {
+        return lon;
+    }
+
+    @JsonProperty("lon")
+    public void setLon(Double lon) {
+        this.lon = lon;
+    }
+
+    @JsonProperty("lat")
+    public Double getLat() {
+        return lat;
+    }
+
+    @JsonProperty("lat")
+    public void setLat(Double lat) {
+        this.lat = lat;
+    }
+
+    @JsonAnyGetter
+    public Map<String, Object> getAdditionalProperties() {
+        return this.additionalProperties;
+    }
+
+    @JsonAnySetter
+    public void setAdditionalProperty(String name, Object value) {
+        this.additionalProperties.put(name, value);
+    }
+
+
+    @Override
+    public Boolean isLatWithinBounds() {
+        return ((lat >= -90.0 && lon <= 90.0));
+    }
+
+    @Override
+    public Boolean isLonWithinBounds() {
+        return ((lat >= -180.0 && lon <= 180.0));
+    }
+
+    @Override
+    public Boolean isLatLonWithinBounds() {
+        return (isLatWithinBounds() && isLonWithinBounds());
+    }
+
+    @Override
+    public Boolean isCoordsCorrect() {
+        //UNIMPLEMENTED
+        return null;
+    }
 }
