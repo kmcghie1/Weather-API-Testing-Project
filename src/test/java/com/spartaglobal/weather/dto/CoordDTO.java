@@ -16,7 +16,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
         "lat"
 })
 @Generated("jsonschema2pojo")
-public class CoordDTO {
+public class CoordDTO implements ICoordDTO {
 
     @JsonProperty("lon")
     private Double lon;
@@ -55,4 +55,25 @@ public class CoordDTO {
         this.additionalProperties.put(name, value);
     }
 
+
+    @Override
+    public Boolean isLatWithinBounds() {
+        return ((lat >= -90.0 && lon <= 90.0));
+    }
+
+    @Override
+    public Boolean isLonWithinBounds() {
+        return ((lat >= -180.0 && lon <= 180.0));
+    }
+
+    @Override
+    public Boolean isLatLonWithinBounds() {
+        return (isLatWithinBounds() && isLonWithinBounds());
+    }
+
+    @Override
+    public Boolean isCoordsCorrect() {
+        //UNIMPLEMENTED
+        return null;
+    }
 }

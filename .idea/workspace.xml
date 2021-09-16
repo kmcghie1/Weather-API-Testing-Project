@@ -4,10 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a34c503b-4999-4119-a960-768048de4716" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/spartaglobal/weather/dto/ICoordDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+    <list default="true" id="a34c503b-4999-4119-a960-768048de4716" name="Default Changelist" comment="Created CoordDTO using jsonschema2pojo">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/spartaglobal/weather/dto/CoordDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/spartaglobal/weather/dto/CoordDTO.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,6 +58,21 @@
       <option name="presentableId" value="Default" />
       <updated>1631721252619</updated>
     </task>
+    <task id="LOCAL-00001" summary="Created ICoordDTO (Interface for CoordDTO)">
+      <created>1631784903292</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1631784903292</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Created CoordDTO using jsonschema2pojo">
+      <created>1631785119098</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1631785119098</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -72,5 +86,10 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Created ICoordDTO (Interface for CoordDTO)" />
+    <MESSAGE value="Created CoordDTO using jsonschema2pojo" />
+    <option name="LAST_COMMIT_MESSAGE" value="Created CoordDTO using jsonschema2pojo" />
   </component>
 </project>
