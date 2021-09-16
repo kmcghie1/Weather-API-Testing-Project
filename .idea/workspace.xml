@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="736cff97-d231-4e04-a915-418d8ed1e52d" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/spartaglobal/weather/dto/SystemDTOTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/spartaglobal/weather/dto/SystemDTOTest.java" afterDir="false" />
-    </list>
+    <list default="true" id="736cff97-d231-4e04-a915-418d8ed1e52d" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
