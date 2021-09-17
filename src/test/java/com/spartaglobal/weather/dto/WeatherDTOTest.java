@@ -80,7 +80,7 @@ public class WeatherDTOTest {
         @ParameterizedTest
         @ValueSource(strings = {"Thunderstorm", "Mist", "Dust"})
         @DisplayName("Testing if isValidWeatherOptions allows valid strings")
-        void testIfValidWeatherOptionAllowsValidStrings(String weather){
+        void testIfIsValidWeatherOptionAllowsValidStrings(String weather){
             weatherDTO.setMain(weather);
             Assertions.assertTrue(weatherDTO.isValidWeatherOption());
         }
@@ -88,9 +88,41 @@ public class WeatherDTOTest {
         @ParameterizedTest
         @ValueSource(strings = {"Hail", "Sleet"})
         @DisplayName("Testing if isValidWeatherOptions rejects invalid strings")
-        void testIfValidWeatherOptionsRejectsInvalidStrings(String weather){
+        void testIfIsValidWeatherOptionsRejectsInvalidStrings(String weather){
             weatherDTO.setMain(weather);
             Assertions.assertFalse(weatherDTO.isValidWeatherOption());
+        }
+
+        @ParameterizedTest
+        @ValueSource(strings = {"scattered clouds", "rain", "shower rain"})
+        @DisplayName("Testing if isValidDescription allows valid strings")
+        void testIfIsValidDescriptionAllowsValidStrings(String weather){
+            weatherDTO.setDescription(weather);
+            Assertions.assertTrue(weatherDTO.isValidDescription());
+        }
+
+        @ParameterizedTest
+        @ValueSource(strings = {"cloudy rain", "hail", "shower sleet"})
+        @DisplayName("Testing if isValidDescription rejects invalid strings")
+        void testIfIsValidDescriptionRejectsInvalidStrings(String weather){
+            weatherDTO.setDescription(weather);
+            Assertions.assertFalse(weatherDTO.isValidDescription());
+        }
+
+        @ParameterizedTest
+        @ValueSource(strings = {"01d", "04d", "50d","03n", "04n", "09n"})
+        @DisplayName("Testing if isValidIcon accepts valid strings")
+        void testIfIsValidIconAcceptsValidStrings(String weather){
+            weatherDTO.setIcon(weather);
+            Assertions.assertTrue(weatherDTO.isValidIcon());
+        }
+
+        @ParameterizedTest
+        @ValueSource(strings = {"22d", "49d", "40n", "110n"})
+        @DisplayName("Testing if isValidIcon accepts valid strings")
+        void testIfIsValidIconRejectsInvalidStrings(String weather){
+            weatherDTO.setIcon(weather);
+            Assertions.assertFalse(weatherDTO.isValidIcon());
         }
 
     }
