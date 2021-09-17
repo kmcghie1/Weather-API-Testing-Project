@@ -13,8 +13,7 @@ public class InjectorTests {
 
     @BeforeEach
     void setup() {
-        projectDTO = Injector.injectDTO(url +
-                PropertiesLoader.getProperties().getProperty("APIKey"));
+        projectDTO = Injector.injectDTO(url + PropertiesLoader.getProperties().getProperty("APIKey"));
     }
 
     @Nested
