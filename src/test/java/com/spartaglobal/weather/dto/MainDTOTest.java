@@ -1,5 +1,8 @@
 package com.spartaglobal.weather.dto;
 
+import com.spartaglobal.weather.ConnectionManager;
+import com.spartaglobal.weather.Injector;
+import com.spartaglobal.weather.util.PropertiesLoader;
 import org.junit.jupiter.api.*;
 
 public class MainDTOTest {
@@ -7,7 +10,11 @@ public class MainDTOTest {
 
     @BeforeEach
     void setup() {
-        mainDTO = new MainDTO();
+        ProjectDTO projectDTO = Injector.injectDTO(
+                ConnectionManager.getURL("London",
+                        PropertiesLoader.getProperties().getProperty("APIKey"))
+        );
+        mainDTO = projectDTO.getMain();
     }
 
     @Nested
@@ -58,12 +65,14 @@ public class MainDTOTest {
         @Test
         @DisplayName("seaLevelPressure Type Test")
         void seaLevelPressureTypeTest() {
+            Assumptions.assumeTrue(mainDTO.getSeaLevel() != null);
             Assertions.assertSame(mainDTO.getSeaLevel().getClass(), Integer.class);
         }
 
         @Test
         @DisplayName("groundLevelPressure Type Test")
         void groundLevelPressureTypeTest() {
+            Assumptions.assumeTrue(mainDTO.getGrndLevel() != null);
             Assertions.assertSame(mainDTO.getGrndLevel().getClass(), Integer.class);
         }
     }
