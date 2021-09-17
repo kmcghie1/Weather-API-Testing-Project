@@ -1,5 +1,8 @@
 package com.spartaglobal.weather.dto;
 
+import com.spartaglobal.weather.ConnectionManager;
+import com.spartaglobal.weather.Injector;
+import com.spartaglobal.weather.util.PropertiesLoader;
 import org.junit.jupiter.api.*;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
@@ -9,7 +12,8 @@ public class WeatherDTOTest {
 
     @BeforeEach
     void setup(){
-        weatherDTO = new WeatherDTO();
+        ProjectDTO projectDTO = Injector.injectDTO(ConnectionManager.getURL("London", PropertiesLoader.getProperties().getProperty("APIKey")));
+        weatherDTO = projectDTO.getWeather().get(0);
     }
     @Nested
     @DisplayName("Test getters function")
@@ -45,28 +49,24 @@ public class WeatherDTOTest {
     class testingCorrectDataType{
 
         @Test
-        @Disabled
         @DisplayName("Testing id is the correct data type")
         void testIdIsInteger(){
             Assertions.assertEquals(Integer.class, weatherDTO.getId().getClass());
         }
 
         @Test
-        @Disabled
         @DisplayName("Testing main is the correct data type")
         void testMainIsString(){
             Assertions.assertEquals(String.class, weatherDTO.getMain().getClass());
         }
 
         @Test
-        @Disabled
         @DisplayName("Testing description is the correct data type")
         void testDescriptionIsString(){
             Assertions.assertEquals(String.class, weatherDTO.getDescription().getClass());
         }
 
         @Test
-        @Disabled
         @DisplayName("Testing icon is the correct data type")
         void testIconIsString(){
             Assertions.assertEquals(String.class, weatherDTO.getIcon().getClass());
