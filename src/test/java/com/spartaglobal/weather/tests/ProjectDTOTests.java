@@ -4,6 +4,7 @@ import com.spartaglobal.weather.ConnectionManager;
 import com.spartaglobal.weather.Injector;
 import com.spartaglobal.weather.dto.*;
 import com.spartaglobal.weather.util.PropertiesLoader;
+import org.hamcrest.Matchers;
 import org.junit.jupiter.api.*;
 
 import java.util.List;
@@ -22,7 +23,6 @@ public class ProjectDTOTests {
     @Nested
     @DisplayName("Test Attribute Types")
     class attributeTypes {
-
         @Test
         @DisplayName("Coord")
         void coord() {
@@ -98,6 +98,83 @@ public class ProjectDTOTests {
     @Nested
     @DisplayName("Test Attribute values are not null/empty")
     class notNullOrEmpty {
+        @Nested
+        @DisplayName("Null checks")
+        class nullChecks{
+
+            @Test
+            @DisplayName("Coord")
+            void coord() {
+                Assertions.assertNotNull(projectDTO.getCoord());
+            }
+            @Test
+            @DisplayName("Weather List")
+            void weatherList() {
+                Assertions.assertNotNull(projectDTO.getWeather());
+            }
+            @Test
+            @DisplayName("Weather")
+            void weather() {
+                Assertions.assertNotNull(projectDTO.getWeather().get(0));
+            }
+            @Test
+            @DisplayName("Base")
+            void base() {
+                Assertions.assertNotNull(projectDTO.getBase());
+            }
+            @Test
+            @DisplayName("Main")
+            void main() {
+                Assertions.assertNotNull(projectDTO.getMain());
+            }
+            @Test
+            @DisplayName("Visibility")
+            void visibility() {
+                Assertions.assertNotNull(projectDTO.getVisibility());
+            }
+            @Test
+            @DisplayName("Wind")
+            void wind() {
+                Assertions.assertNotNull(projectDTO.getCoord());
+            }
+            @Test
+            @DisplayName("Clouds")
+            void clouds() {
+                Assertions.assertNotNull(projectDTO.getClouds());
+            }
+            @Test
+            @DisplayName("dt")
+            void dt() {
+                Assertions.assertNotNull(projectDTO.getDt());
+            }
+            @Test
+            @DisplayName("sys")
+            void sys() {
+                Assertions.assertNotNull(projectDTO.getSys());
+            }
+            @Test
+            @DisplayName("Timezone")
+            void timezone() {
+                Assertions.assertNotNull(projectDTO.getTimezone());
+            }
+            @Test
+            @DisplayName("id")
+            void id() {
+                Assertions.assertNotNull(projectDTO.getId());
+            }
+            @Test
+            @DisplayName("Name")
+            void name() {
+                Assertions.assertNotNull(projectDTO.getName());
+            }
+            @Test
+            @DisplayName("cod")
+            void cod() {
+                Assertions.assertNotNull(projectDTO.getCod());
+            }
+
+        }
+
 
     }
 
