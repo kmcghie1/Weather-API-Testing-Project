@@ -3,19 +3,29 @@ package com.spartaglobal.weather.dto;
 import org.junit.jupiter.api.*;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
+import org.mockito.Mockito;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class SystemDTOTest {
     SystemDTO systemDTO;
+    SystemDTO mockSystemDTO;
 
     @BeforeEach
     void setUp() {
         systemDTO = new SystemDTO();
+        mockSystemDTO = Mockito.mock(SystemDTO.class);
     }
 
     @Nested
     @DisplayName("Type field")
     class typeFieldTests {
+        @Test
+        @DisplayName("Check type field class is Integer")
+        void checkTypeFieldClassIsInteger() {
+            Mockito.when(mockSystemDTO.getType()).thenReturn(1);
+            assertEquals(Integer.class, mockSystemDTO.getType().getClass());
+        }
 
         @ParameterizedTest
         @DisplayName("Type must be either 1 or 2")
@@ -28,6 +38,12 @@ class SystemDTOTest {
     @Nested
     @DisplayName("Id field")
     class idFieldTests {
+        @Test
+        @DisplayName("Check id field class is Integer")
+        void checkIdFieldClassIsInteger() {
+            Mockito.when(mockSystemDTO.getId()).thenReturn(1200);
+            assertEquals(Integer.class, mockSystemDTO.getId().getClass());
+        }
 
         @ParameterizedTest
         @DisplayName("Id must be within ranges 0 and int max")
@@ -40,6 +56,12 @@ class SystemDTOTest {
     @Nested
     @DisplayName("Country field")
     class countryCodeTests {
+        @Test
+        @DisplayName("Check country field class is String")
+        void checkCountryFieldClassIsString() {
+            Mockito.when(mockSystemDTO.getCountry()).thenReturn("UK");
+            assertEquals(String.class, mockSystemDTO.getCountry().getClass());
+        }
 
         @ParameterizedTest
         @DisplayName("Country code must be a two letter string of capitals")
@@ -52,6 +74,19 @@ class SystemDTOTest {
     @Nested
     @DisplayName("Sunrise & Sunset field")
     class sunriseAndSunsetTests {
+        @Test
+        @DisplayName("Check sunrise field class is Long")
+        void checkSunriseFieldClassIsLong() {
+            Mockito.when(mockSystemDTO.getSunrise()).thenReturn(9_999_999_999L);
+            assertEquals(Long.class, mockSystemDTO.getSunrise().getClass());
+        }
+
+        @Test
+        @DisplayName("Check Sunset field class is Long")
+        void checkSunsetFieldClassIsLong() {
+            Mockito.when(mockSystemDTO.getSunset()).thenReturn(9_999_999_999L);
+            assertEquals(Long.class, mockSystemDTO.getSunset().getClass());
+        }
 
         @ParameterizedTest
         @DisplayName("Sunrise Check for 10 digits")
