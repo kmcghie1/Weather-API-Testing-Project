@@ -2,6 +2,7 @@ package com.spartaglobal.weather;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.spartaglobal.weather.dto.ProjectDTO;
+import com.spartaglobal.weather.util.PropertiesLoader;
 
 import java.io.File;
 import java.io.IOException;
@@ -12,9 +13,9 @@ public class Injector {
 
     public static ProjectDTO injectDTO(String path) {
         ProjectDTO dto = new ProjectDTO();
-        if(path.contains("weather")) {
+        if(path.contains("weather?q=")) {
             try {
-                dto = objectMapper.readValue(new File(path), ProjectDTO.class);
+                dto = objectMapper.readValue(path, ProjectDTO.class);
                 return dto;
             }catch(IOException e) {
                 e.printStackTrace();
