@@ -1,15 +1,24 @@
 package com.spartaglobal.weather.dto;
 
+import com.spartaglobal.weather.util.WeatherEventLoader;
 import org.junit.jupiter.api.*;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
 
+import java.util.HashMap;
+
 public class WeatherDTOTest {
     WeatherDTO weatherDTO;
+    WeatherDTO exampleWeatherObject;
 
     @BeforeEach
     void setup(){
         weatherDTO = new WeatherDTO();
+        exampleWeatherObject = new WeatherDTO();
+        exampleWeatherObject.setId(612);
+        exampleWeatherObject.setMain("Snow");
+        exampleWeatherObject.setDescription("Light shower sleet");
+        exampleWeatherObject.setIcon("13d");
     }
     @Nested
     @DisplayName("Test getters function")
@@ -125,5 +134,38 @@ public class WeatherDTOTest {
             Assertions.assertFalse(weatherDTO.isValidIcon());
         }
 
+        @Test
+        @DisplayName("Test Weather Object Accepts Valid Object")
+        void testIfValidObjectIsAccepted(){
+            Assertions.assertTrue(exampleWeatherObject.isValidWeatherObject());
+        }
+
+        @Test
+        @DisplayName("Test Weather Object rejects an invalid ID")
+        void testIfValidObjectIDIsRejected(){
+            exampleWeatherObject.setId(100);
+            Assertions.assertFalse(exampleWeatherObject.isValidWeatherObject());
+        }
+
+        @Test
+        @DisplayName("Test Weather Object rejects an invalid Main")
+        void testIfValidObjectNameIsRejected(){
+            exampleWeatherObject.setMain("Wrong Temp");
+            Assertions.assertFalse(exampleWeatherObject.isValidWeatherObject());
+        }
+
+        @Test
+        @DisplayName("Test Weather Object rejects an invalid Description")
+        void testIfValidObjectDescriptionIsRejected(){
+            exampleWeatherObject.setDescription("Wrong Temp");
+            Assertions.assertFalse(exampleWeatherObject.isValidWeatherObject());
+        }
+
+        @Test
+        @DisplayName("Test Weather Object rejects an invalid Icon")
+        void testIfValidObjectIconIsRejected(){
+            exampleWeatherObject.setIcon("100b");
+            Assertions.assertFalse(exampleWeatherObject.isValidWeatherObject());
+        }
     }
 }
