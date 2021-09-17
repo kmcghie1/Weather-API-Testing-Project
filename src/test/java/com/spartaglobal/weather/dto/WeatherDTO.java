@@ -50,10 +50,10 @@ public class WeatherDTO implements iWeatherDTO {
     }
 
     @Override
-    public boolean isValidWeatherOption() {
+    public boolean isValidWeatherOption(String weather) {
         ArrayList<String> validWeatherOptions = new ArrayList<>(Arrays.asList("Thunderstorm", "Drizzle", "Rain", "Snow", "Mist", "Smoke", "Haze", "Dust", "Fog", "Sand", "Dust", "Ash", "Squall", "Tornado", "Clear", "Clouds"));
 
-        if(validWeatherOptions.contains(this.main)){
+        if(validWeatherOptions.contains(weather)){
             return true;
         }
         else{
