@@ -22,6 +22,7 @@ public class SystemDTO implements ISystemDTO{
     private Integer type;
     @JsonProperty("id")
     private Integer id;
+
     @JsonProperty("message")
     private Double message;
     @JsonProperty("country")
@@ -96,13 +97,13 @@ public class SystemDTO implements ISystemDTO{
     }
 
     @Override
-    public Boolean isSunriseTenDigits(Long time) {
-        return time.toString().length()==10;
+    public Boolean isSunrisePositive(Long time) {
+        return time>=0;
     }
 
     @Override
-    public Boolean isSunsetTenDigits(Long time) {
-        return time.toString().length()==10;
+    public Boolean isSunsetPositive(Long time) {
+        return time>=0;
     }
 
     @Override

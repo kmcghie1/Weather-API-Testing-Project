@@ -67,6 +67,18 @@ class SystemDTOTest {
     }
 
     @Nested
+    @DisplayName("Message field")
+    class messageTest {
+
+        @Test
+        @DisplayName("Test if message is the correct class type")
+        void testIfMessageIsTheCorrectClassType() {
+            Mockito.when(mockSystemDTO.getMessage()).thenReturn(0.0035);
+            assertEquals(Double.class, mockSystemDTO.getMessage().getClass());
+        }
+    }
+
+    @Nested
     @DisplayName("Country field")
     class countryCodeTests {
         @Test
@@ -109,8 +121,37 @@ class SystemDTOTest {
         }
 
         @ParameterizedTest
-        @DisplayName("Sunrise Check for 10 digits")
-        @ValueSource(longs = {1_000_000_000, 9_999_999_999L})
+        @DisplayName("Check Sunrise positive.")
+        @ValueSource(longs = {1, 1_000_000_000, Long.MAX_VALUE})
+        void testSunrisePositive(long time){
+            assertTrue(systemDTO.isSunrisePositive(time));
+        }
+
+        @ParameterizedTest
+        @DisplayName("Check Sunrise positive false.")
+        @ValueSource(longs = {-1, -1_000_000_000, -Long.MAX_VALUE})
+        void testSunriseNegativeFalse(long time){
+            assertFalse(systemDTO.isSunrisePositive(time));
+        }
+
+        @ParameterizedTest
+        @DisplayName("Check Sunset positive.")
+        @ValueSource(longs = {1, 1_000_000_000, Long.MAX_VALUE})
+        void testSunsetPositive(long time){
+            assertTrue(systemDTO.isSunsetPositive(time));
+        }
+
+        @ParameterizedTest
+        @DisplayName("Check Sunset positive false.")
+        @ValueSource(longs = {-1, -1_000_000_000, -Long.MAX_VALUE})
+        void testSunriseNegative(long time){
+            assertFalse(systemDTO.isSunrisePositive(time));
+        }
+
+        // Commented for deletion
+        /*@ParameterizedTest
+        @DisplayName("Sunrise Check for minimum 10 digits and maximum of long Max")
+        @ValueSource(longs = {1_000_000_000, Long.MAX_VALUE})
         void testSunsetTimeIsTenDigitsTrue(Long number) {
             assertTrue(systemDTO.isSunriseTenDigits(number));
         }
@@ -134,7 +175,7 @@ class SystemDTOTest {
         @ValueSource(longs = {100_000_000, 999_999_999, 0})
         void testSunriseTimeIsTenDigitsFalse(Long number) {
             assertFalse(systemDTO.isSunsetTenDigits(number));
-        }
+        }*/
 
         @Test
         @DisplayName("Sunrise before sunset test should be true")
