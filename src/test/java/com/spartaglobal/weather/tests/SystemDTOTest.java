@@ -1,5 +1,6 @@
-package com.spartaglobal.weather.dto;
+package com.spartaglobal.weather.tests;
 
+import com.spartaglobal.weather.dto.helper.SystemDTO;
 import org.junit.jupiter.api.*;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;

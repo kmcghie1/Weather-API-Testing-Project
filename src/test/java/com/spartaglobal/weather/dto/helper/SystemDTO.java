@@ -1,9 +1,10 @@
-package com.spartaglobal.weather.dto;
+package com.spartaglobal.weather.dto.helper;
 
 import javax.annotation.Generated;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+import com.spartaglobal.weather.dto.interfaces.ISystemDTO;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
@@ -16,7 +17,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 })
 @Generated("jsonschema2pojo")
 
-public class SystemDTO implements ISystemDTO{
+public class SystemDTO implements ISystemDTO {
 
     @JsonProperty("type")
     private Integer type;

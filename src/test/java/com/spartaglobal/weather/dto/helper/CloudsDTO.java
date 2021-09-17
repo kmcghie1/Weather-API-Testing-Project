@@ -1,4 +1,4 @@
-package com.spartaglobal.weather.dto;
+package com.spartaglobal.weather.dto.helper;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -9,6 +9,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+import com.spartaglobal.weather.dto.interfaces.ICloudsDTO;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
@@ -16,7 +17,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
 })
 @Generated("jsonschema2pojo")
 
-public class CloudsDTO implements ICloudsDTO{
+public class CloudsDTO implements ICloudsDTO {
 
     @JsonProperty("all")
     private Integer all;

@@ -1,4 +1,6 @@
-package com.spartaglobal.weather.dto;
+package com.spartaglobal.weather.dto.interfaces;
+
+import com.spartaglobal.weather.dto.helper.*;
 
 import java.util.List;
 
