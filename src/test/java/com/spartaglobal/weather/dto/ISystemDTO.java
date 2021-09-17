@@ -10,7 +10,10 @@ public interface ISystemDTO {
     Boolean isTypeWithinBoundaries(int typeValue);
     Boolean isIdWithinBoundaries(int idValue);
     Boolean isCountryTwoLetters(String countryCode);
-    Boolean isSunriseTenDigits(Long time);
-    Boolean isSunsetTenDigits(Long time);
+    //Commented for deletion
+    /*Boolean isSunriseTenDigits(Long time);
+    Boolean isSunsetTenDigits(Long time);*/
+    Boolean isSunrisePositive(Long time);
+    Boolean isSunsetPositive(Long time);
     Boolean isSunriseBeforeSunset(Long sunriseTime, Long sunsetTime);
 }
