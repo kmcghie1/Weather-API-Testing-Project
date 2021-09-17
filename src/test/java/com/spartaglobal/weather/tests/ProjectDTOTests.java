@@ -7,6 +7,7 @@ import com.spartaglobal.weather.util.PropertiesLoader;
 import org.hamcrest.Matchers;
 import org.junit.jupiter.api.*;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class ProjectDTOTests {
@@ -31,7 +32,7 @@ public class ProjectDTOTests {
         @Test
         @DisplayName("Weather List")
         void weatherList() {
-            Assertions.assertEquals(List.class, projectDTO.getWeather().getClass());
+            Assertions.assertEquals(ArrayList.class, projectDTO.getWeather().getClass());
         }
         @Test
         @DisplayName("Weather")
@@ -175,19 +176,88 @@ public class ProjectDTOTests {
 
         }
 
+        @Nested
+        @DisplayName("Empty Checks")
+        class emptyChecks {
+            @Test
+            @DisplayName("Coord")
+            void coord() {
+                CoordDTO emptyCoord = new CoordDTO();
+                Assertions.assertNotEquals(emptyCoord.toString(), projectDTO.getCoord().toString());
+            }
+            @Test
+            @DisplayName("Weather")
+            void weather() {
+                WeatherDTO emptyWeather = new WeatherDTO();
+                Assertions.assertNotEquals(emptyWeather.toString(), projectDTO.getWeather().toString());
+            }
+            @Test
+            @DisplayName("Base")
+            void base() {
+                Assertions.assertNotEquals("", projectDTO.getBase());
+            }
+            @Test
+            @DisplayName("Main")
+            void main() {
+                MainDTO emptyMain = new MainDTO();
+                Assertions.assertNotEquals(emptyMain.toString(), projectDTO.getMain().toString());
+            }
+            @Test
+            @DisplayName("Visibility")
+            void visibility() {
+                Assertions.assertNotEquals("", projectDTO.getVisibility().toString());
 
+            }
+            @Test
+            @DisplayName("Wind")
+            void wind() {
+                WindDTO emptyWind = new WindDTO();
+                Assertions.assertNotEquals(emptyWind.toString(), projectDTO.getWind().toString());
+            }
+            @Test
+            @DisplayName("Clouds")
+            void clouds() {
+                CloudsDTO emptyClouds = new CloudsDTO();
+                Assertions.assertNotEquals(emptyClouds.toString(), projectDTO.getClouds().toString());
+            }
+            @Test
+            @DisplayName("Dt")
+            void dt() {
+                Assertions.assertNotEquals("", projectDTO.getDt().toString());
+            }
+            @Test
+            @DisplayName("Sys")
+            void sys() {
+                SystemDTO emptySys = new SystemDTO();
+                Assertions.assertNotEquals(emptySys.toString(), projectDTO.getSys().toString());
+            }
+            @Test
+            @DisplayName("Timezone")
+            void timezone() {
+                Assertions.assertNotEquals("", projectDTO.getTimezone().toString());
+            }
+            @Test
+            @DisplayName("Id")
+            void id() {
+                Assertions.assertNotEquals("", projectDTO.getId().toString());
+            }
+            @Test
+            @DisplayName("Name")
+            void name() {
+                Assertions.assertNotEquals("", projectDTO.getName());
+            }
+            @Test
+            @DisplayName("Cod")
+            void cod() {
+                Assertions.assertNotEquals("", projectDTO.getCod().toString());
+            }
+        }
     }
 
     @Nested
     @DisplayName("Test Helper Functions")
     class helperFunctions {
-
-    }
-
-    @Nested
-    @DisplayName("Test getters")
-    class getters {
-
+        //Not any to test yet
     }
 
 }
