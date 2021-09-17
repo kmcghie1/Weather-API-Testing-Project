@@ -4,7 +4,6 @@ import org.junit.jupiter.api.*;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
 import org.mockito.Mockito;
-
 import static org.junit.jupiter.api.Assertions.*;
 
 class SystemDTOTest {
@@ -29,9 +28,16 @@ class SystemDTOTest {
 
         @ParameterizedTest
         @DisplayName("Type must be either 1 or 2")
-        @ValueSource(ints = {-1,0,1,2,3})
-        void testTypeIsOneORTwo(int numbers) {
+        @ValueSource(ints = {1,2})
+        void testTypeIsOneORTwoTrue(int numbers) {
             assertTrue(systemDTO.isTypeWithinBoundaries(numbers));
+        }
+
+        @ParameterizedTest
+        @DisplayName("Type must be either 1 or 2")
+        @ValueSource(ints = {-1,0,3})
+        void testTypeIsOneORTwoFalse(int numbers) {
+            assertFalse(systemDTO.isTypeWithinBoundaries(numbers));
         }
     }
 
@@ -46,10 +52,17 @@ class SystemDTOTest {
         }
 
         @ParameterizedTest
-        @DisplayName("Id must be within ranges 0 and int max")
-        @ValueSource(ints = {-1,0,1, Integer.MAX_VALUE-1,Integer.MAX_VALUE, Integer.MAX_VALUE+1})
-        void testIdIsInRange(int numbers) {
+        @DisplayName("Id must be within ranges 0 and int max true")
+        @ValueSource(ints = {0,1, Integer.MAX_VALUE-1,Integer.MAX_VALUE})
+        void testIdIsInRangeTrue(int numbers) {
             assertTrue(systemDTO.isIdWithinBoundaries(numbers));
+        }
+
+        @ParameterizedTest
+        @DisplayName("Id must be within ranges 0 and int max false")
+        @ValueSource(ints = {-1,Integer.MAX_VALUE+1})
+        void testIdIsInRangeFalse(int numbers) {
+            assertFalse(systemDTO.isIdWithinBoundaries(numbers));
         }
     }
 
@@ -64,10 +77,17 @@ class SystemDTOTest {
         }
 
         @ParameterizedTest
-        @DisplayName("Country code must be a two letter string of capitals")
-        @ValueSource(strings = {"AZ","TC", "az","a"," "," az","azy", "ABc"})
-        void testCountryIsTwoLetter(String countryCode) {
+        @DisplayName("Country code must be a two letter string of capitals should be True")
+        @ValueSource(strings = {"AZ","TC"})
+        void testCountryIsTwoLetterTrue(String countryCode) {
             assertTrue(systemDTO.isCountryTwoLetters(countryCode));
+        }
+
+        @ParameterizedTest
+        @DisplayName("Country code must be a two letter string of capitals should be False")
+        @ValueSource(strings = {"az","a"," "," az","azy", "ABc"})
+        void testCountryIsTwoLetterFalse(String countryCode) {
+            assertFalse(systemDTO.isCountryTwoLetters(countryCode));
         }
     }
 
@@ -90,28 +110,46 @@ class SystemDTOTest {
 
         @ParameterizedTest
         @DisplayName("Sunrise Check for 10 digits")
-        @ValueSource(longs = {1_000_000_000, 9_999_999_999L,100_000_000, 999_999_999, 0})
-        void testSunsetTimeIsTenDigits(Long number) {
+        @ValueSource(longs = {1_000_000_000, 9_999_999_999L})
+        void testSunsetTimeIsTenDigitsTrue(Long number) {
             assertTrue(systemDTO.isSunriseTenDigits(number));
         }
 
         @ParameterizedTest
+        @DisplayName("Sunrise Check for 10 digits")
+        @ValueSource(longs = {100_000_000, 999_999_999, 0})
+        void testSunsetTimeIsTenDigitsFalse(Long number) {
+            assertFalse(systemDTO.isSunriseTenDigits(number));
+        }
+
+        @ParameterizedTest
         @DisplayName("Sunset Check for 10 digits")
-        @ValueSource(longs = {1_000_000_000, 9_999_999_999L,100_000_000, 999_999_999, 0})
-        void testSunriseTimeIsTenDigits(Long number) {
+        @ValueSource(longs = {1_000_000_000, 9_999_999_999L})
+        void testSunriseTimeIsTenDigitsTrue(Long number) {
             assertTrue(systemDTO.isSunsetTenDigits(number));
+        }
+
+        @ParameterizedTest
+        @DisplayName("Sunset Check for 10 digits")
+        @ValueSource(longs = {100_000_000, 999_999_999, 0})
+        void testSunriseTimeIsTenDigitsFalse(Long number) {
+            assertFalse(systemDTO.isSunsetTenDigits(number));
         }
 
         @Test
         @DisplayName("Sunrise before sunset test should be true")
         void testSunriseIsBeforeSunsetPasses() {
-            assertTrue(systemDTO.isSunriseBeforeSunset(1_000_000_000L,1_000_000_001L));
+            Mockito.when(mockSystemDTO.getSunrise()).thenReturn(1_000_000_000L);
+            Mockito.when(mockSystemDTO.getSunset()).thenReturn(1_000_000_001L);
+            assertTrue(systemDTO.isSunriseBeforeSunset(mockSystemDTO.getSunrise(), mockSystemDTO.getSunset()));
         }
 
         @Test
         @DisplayName("Sunrise before sunset test should be false")
         void testSunriseIsBeforeSunsetFails() {
-            assertFalse(systemDTO.isSunriseBeforeSunset(1_000_000_001L,1_000_000_000L));
+            Mockito.when(mockSystemDTO.getSunrise()).thenReturn(1_000_000_001L);
+            Mockito.when(mockSystemDTO.getSunset()).thenReturn(1_000_000_000L);
+            assertFalse(systemDTO.isSunriseBeforeSunset(mockSystemDTO.getSunrise(), mockSystemDTO.getSunset()));
         }
     }
 
