@@ -1,4 +1,4 @@
-package com.spartaglobal.weather.dto;
+package com.spartaglobal.weather.dto.interfaces;
 
 public interface ICloudsDTO {
     Integer getAll();

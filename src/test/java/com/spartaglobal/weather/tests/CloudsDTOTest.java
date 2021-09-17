@@ -1,7 +1,9 @@
-package com.spartaglobal.weather.dto;
+package com.spartaglobal.weather.tests;
 
 import com.spartaglobal.weather.ConnectionManager;
 import com.spartaglobal.weather.Injector;
+import com.spartaglobal.weather.dto.helper.CloudsDTO;
+import com.spartaglobal.weather.dto.ProjectDTO;
 import com.spartaglobal.weather.util.PropertiesLoader;
 import org.junit.jupiter.api.*;
 import org.junit.jupiter.params.ParameterizedTest;

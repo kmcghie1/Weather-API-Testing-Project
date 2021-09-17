@@ -1,10 +1,10 @@
-package com.spartaglobal.weather.dto;
+package com.spartaglobal.weather.dto.helper;
 
 import com.fasterxml.jackson.annotation.*;
+import com.spartaglobal.weather.dto.interfaces.iWeatherDTO;
 import com.spartaglobal.weather.util.WeatherEventLoader;
 
 import javax.annotation.processing.Generated;
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;

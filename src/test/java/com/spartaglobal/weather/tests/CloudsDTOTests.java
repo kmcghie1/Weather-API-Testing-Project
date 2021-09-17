@@ -1,18 +1,13 @@
 package com.spartaglobal.weather.tests;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
 import com.spartaglobal.weather.ConnectionManager;
 import com.spartaglobal.weather.Injector;
-import com.spartaglobal.weather.dto.CloudsDTO;
+import com.spartaglobal.weather.dto.helper.CloudsDTO;
 import com.spartaglobal.weather.dto.ProjectDTO;
 import com.spartaglobal.weather.util.PropertiesLoader;
 import org.junit.jupiter.api.*;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
-import org.mockito.Mockito;
-
-import java.io.IOException;
-import java.net.URL;
 
 
 public class CloudsDTOTests {

@@ -10,6 +10,8 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+import com.spartaglobal.weather.dto.helper.*;
+import com.spartaglobal.weather.dto.interfaces.IProjectDTO;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
@@ -28,7 +30,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
         "cod"
 })
 @Generated("jsonschema2pojo")
-public class ProjectDTO implements IProjectDTO{
+public class ProjectDTO implements IProjectDTO {
 
     @JsonProperty("coord")
     private CoordDTO coord;

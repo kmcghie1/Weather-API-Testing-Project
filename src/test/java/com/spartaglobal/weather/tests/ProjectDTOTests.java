@@ -3,12 +3,11 @@ package com.spartaglobal.weather.tests;
 import com.spartaglobal.weather.ConnectionManager;
 import com.spartaglobal.weather.Injector;
 import com.spartaglobal.weather.dto.*;
+import com.spartaglobal.weather.dto.helper.*;
 import com.spartaglobal.weather.util.PropertiesLoader;
-import org.hamcrest.Matchers;
 import org.junit.jupiter.api.*;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class ProjectDTOTests {
 

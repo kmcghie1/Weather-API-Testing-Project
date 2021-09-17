@@ -1,5 +1,8 @@
-package com.spartaglobal.weather.dto;
+package com.spartaglobal.weather.tests;
 
+
+import com.spartaglobal.weather.dto.ProjectDTO;
+import com.spartaglobal.weather.dto.helper.SystemDTO;
 import com.spartaglobal.weather.ConnectionManager;
 import com.spartaglobal.weather.Injector;
 import com.spartaglobal.weather.util.PropertiesLoader;
