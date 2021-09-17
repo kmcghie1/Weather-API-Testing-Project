@@ -81,14 +81,16 @@ public class WeatherDTOTest {
         @ValueSource(strings = {"Thunderstorm", "Mist", "Dust"})
         @DisplayName("Testing if isValidWeatherOptions allows valid strings")
         void testIfValidWeatherOptionAllowsValidStrings(String weather){
-            Assertions.assertTrue(weatherDTO.isValidWeatherOption(weather));
+            weatherDTO.setMain(weather);
+            Assertions.assertTrue(weatherDTO.isValidWeatherOption());
         }
 
         @ParameterizedTest
         @ValueSource(strings = {"Hail", "Sleet"})
         @DisplayName("Testing if isValidWeatherOptions rejects invalid strings")
         void testIfValidWeatherOptionsRejectsInvalidStrings(String weather){
-            Assertions.assertFalse(weatherDTO.isValidWeatherOption(weather));
+            weatherDTO.setMain(weather);
+            Assertions.assertFalse(weatherDTO.isValidWeatherOption());
         }
 
     }

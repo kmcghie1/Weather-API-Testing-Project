@@ -34,9 +34,19 @@ public class WeatherDTO implements iWeatherDTO {
         return id;
     }
 
+    @JsonProperty("id")
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
     @JsonProperty("main")
     public String getMain() {
         return main;
+    }
+
+    @JsonProperty("main")
+    public void setMain(String main) {
+        this.main = main;
     }
 
     @JsonProperty("description")
@@ -44,21 +54,24 @@ public class WeatherDTO implements iWeatherDTO {
         return description;
     }
 
+    @JsonProperty("description")
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
     @JsonProperty("icon")
     public String getIcon() {
         return icon;
     }
 
+    @JsonProperty("icon")
+    public void setIcon(String icon) {
+        this.icon = icon;
+    }
     @Override
-    public boolean isValidWeatherOption(String weather) {
+    public boolean isValidWeatherOption() {
         ArrayList<String> validWeatherOptions = new ArrayList<>(Arrays.asList("Thunderstorm", "Drizzle", "Rain", "Snow", "Mist", "Smoke", "Haze", "Dust", "Fog", "Sand", "Dust", "Ash", "Squall", "Tornado", "Clear", "Clouds"));
-
-        if(validWeatherOptions.contains(weather)){
-            return true;
-        }
-        else{
-            return false;
-        }
+        return validWeatherOptions.contains(this.main);
     }
 
     @JsonAnyGetter
