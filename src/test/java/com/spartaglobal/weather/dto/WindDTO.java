@@ -22,6 +22,8 @@ public class WindDTO implements iWindDTO {
     private Double speed;
     @JsonProperty("deg")
     private Integer deg;
+    @JsonProperty("gust")
+    private Double gust;
     @JsonIgnore
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
@@ -35,14 +37,19 @@ public class WindDTO implements iWindDTO {
         return deg;
     }
 
+    @JsonProperty("gust")
+    public Double getGust() {
+        return gust;
+    }
+
     @JsonAnyGetter
     public Map<String, Object> getAdditionalProperties() {
         return this.additionalProperties;
     }
 
     @Override
-    public boolean isWithinLimits(Integer upper, Integer lower, Integer value) {
-        if(value >= lower && value <= upper)
+    public boolean isWithinLimits(Integer value) {
+        if(value >= 0 && value <= 359)
         {
             return true;
         }
@@ -50,8 +57,8 @@ public class WindDTO implements iWindDTO {
     }
 
     @Override
-    public boolean isWithinLimits(Double upper, Double lower, Double value) {
-        if(value >= lower && value <= upper)
+    public boolean isWithinLimits(Double value) {
+        if(value >= 0 && value <= 359)
         {
             return true;
         }
