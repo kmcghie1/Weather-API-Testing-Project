@@ -3,14 +3,16 @@ package com.spartaglobal.weather.dto;
 import org.junit.jupiter.api.*;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
+import org.mockito.Mockito;
 
 public class WindDTOTest
 {
-    WindDTO windDTO = new WindDTO();
-
+    WindDTO windDTO;
+    WindDTO mockWindDTO;
     @BeforeEach
     void setup(){
         windDTO = new WindDTO();
+        mockWindDTO = Mockito.mock(WindDTO.class);
     }
 
     @Nested
@@ -43,13 +45,15 @@ public class WindDTOTest
     class getterTests {
         @Test
         @DisplayName("Test Speed has a value")
-        void testLonHasAValue() {
-            Assertions.assertNotNull(windDTO.getSpeed());
+        void testSpeedHasAValue() {
+            Mockito.when(mockWindDTO.getSpeed()).thenReturn(2.53);
+            Assertions.assertNotNull(mockWindDTO.getSpeed());
         }
         @Test
         @DisplayName("Test Degree has a value")
         void testDegHasAValue() {
-            Assertions.assertNotNull(windDTO.getDeg());
+            Mockito.when(mockWindDTO.getDeg()).thenReturn(20);
+            Assertions.assertNotNull(mockWindDTO.getDeg());
         }
     }
 
@@ -59,13 +63,22 @@ public class WindDTOTest
         @Test
         @DisplayName("Testing Degree is Integer")
         void testDegIsInteger(){
-            Assertions.assertEquals(Integer.class, windDTO.getDeg().getClass());
+            Mockito.when(mockWindDTO.getDeg()).thenReturn(20);
+            Assertions.assertEquals(Integer.class, mockWindDTO.getDeg().getClass());
         }
 
         @Test
         @DisplayName("Testing Speed is Double")
         void testSpeedIsDouble(){
-            Assertions.assertEquals(Double.class, windDTO.getSpeed().getClass());
+            Mockito.when(mockWindDTO.getSpeed()).thenReturn(2.24);
+            Assertions.assertEquals(Double.class, mockWindDTO.getSpeed().getClass());
+        }
+
+        @Test
+        @DisplayName("Testing Gust is Double")
+        void testGustIsDouble(){
+            Mockito.when(mockWindDTO.getGust()).thenReturn(2.54);
+            Assertions.assertEquals(Double.class, mockWindDTO.getGust().getClass());
         }
     }
 

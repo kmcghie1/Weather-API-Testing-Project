@@ -22,6 +22,8 @@ public class WindDTO implements iWindDTO {
     private Double speed;
     @JsonProperty("deg")
     private Integer deg;
+    @JsonProperty("gust")
+    private Double gust;
     @JsonIgnore
     private Map<String, Object> additionalProperties = new HashMap<String, Object>();
 
@@ -33,6 +35,11 @@ public class WindDTO implements iWindDTO {
     @JsonProperty("deg")
     public Integer getDeg() {
         return deg;
+    }
+
+    @JsonProperty("gust")
+    public Double getGust() {
+        return gust;
     }
 
     @JsonAnyGetter

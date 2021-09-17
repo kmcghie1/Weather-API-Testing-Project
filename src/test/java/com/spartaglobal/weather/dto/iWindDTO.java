@@ -10,6 +10,8 @@ public interface iWindDTO
     Double getSpeed();
     @JsonProperty("deg")
     Integer getDeg();
+    @JsonProperty("gust")
+    Double getGust();
 
     boolean isWithinLimits(Integer value);
 
