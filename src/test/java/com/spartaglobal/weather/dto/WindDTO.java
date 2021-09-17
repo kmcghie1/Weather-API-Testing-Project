@@ -41,8 +41,8 @@ public class WindDTO implements iWindDTO {
     }
 
     @Override
-    public boolean isWithinLimits(Integer upper, Integer lower, Integer value) {
-        if(value >= lower && value <= upper)
+    public boolean isWithinLimits(Integer value) {
+        if(value >= 0 && value <= 359)
         {
             return true;
         }
@@ -50,8 +50,8 @@ public class WindDTO implements iWindDTO {
     }
 
     @Override
-    public boolean isWithinLimits(Double upper, Double lower, Double value) {
-        if(value >= lower && value <= upper)
+    public boolean isWithinLimits(Double value) {
+        if(value >= 0 && value <= 359)
         {
             return true;
         }

@@ -11,9 +11,9 @@ public interface iWindDTO
     @JsonProperty("deg")
     Integer getDeg();
 
-    boolean isWithinLimits(Integer upper, Integer lower, Integer value);
+    boolean isWithinLimits(Integer value);
 
-    boolean isWithinLimits(Double upper, Double lower, Double value);
+    boolean isWithinLimits(Double value);
 
     boolean isGreaterThanZero(int value);
 
