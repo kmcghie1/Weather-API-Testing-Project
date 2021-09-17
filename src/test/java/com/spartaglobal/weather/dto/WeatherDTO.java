@@ -74,6 +74,18 @@ public class WeatherDTO implements iWeatherDTO {
         return validWeatherOptions.contains(this.main);
     }
 
+    @Override
+    public boolean isValidDescription(){
+        ArrayList<String> validDescriptionOptions = new ArrayList<>(Arrays.asList("clear sky", "few clouds", "scattered clouds", "broken clouds", "shower rain", "rain", "thunderstorm", "snow", "mist"));
+        return validDescriptionOptions.contains(this.description);
+    }
+
+    @Override
+    public boolean isValidIcon(){
+        ArrayList<String> validIconOptions = new ArrayList<>(Arrays.asList("01d", "02d", "03d", "04d", "09d", "10d", "11d", "13d", "50d", "01n", "02n", "03n", "04n", "09n", "10n", "11n", "13n", "50n"));
+        return validIconOptions.contains(this.icon);
+    }
+
     @JsonAnyGetter
     public Map<String, Object> getAdditionalProperties() {
         return this.additionalProperties;
