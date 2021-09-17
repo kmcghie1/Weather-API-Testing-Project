@@ -1,5 +1,8 @@
 package com.spartaglobal.weather.dto;
 
+import com.spartaglobal.weather.ConnectionManager;
+import com.spartaglobal.weather.Injector;
+import com.spartaglobal.weather.util.PropertiesLoader;
 import org.junit.jupiter.api.*;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
@@ -11,7 +14,8 @@ public class CloudsDTOTest {
 
     @BeforeEach
     void setup(){
-        cloudsDTO = new CloudsDTO();
+        ProjectDTO projectDTO = Injector.injectDTO(ConnectionManager.getURL("London", PropertiesLoader.getProperties().getProperty("APIKey")));
+        cloudsDTO = projectDTO.getClouds();
     }
 
 
