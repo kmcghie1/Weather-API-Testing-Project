@@ -6,4 +6,6 @@ public interface iWeatherDTO {
     String getDescription();
     String getIcon();
     boolean isValidWeatherOption();
+    boolean isValidDescription();
+    boolean isValidIcon();
 }
