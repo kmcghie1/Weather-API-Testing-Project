@@ -58,12 +58,12 @@ public class CoordDTO implements ICoordDTO {
 
     @Override
     public Boolean isLatWithinBounds() {
-        return ((lat >= -90.0 && lon <= 90.0));
+        return ((lat >= -90.0 && lat <= 90.0));
     }
 
     @Override
     public Boolean isLonWithinBounds() {
-        return ((lat >= -180.0 && lon <= 180.0));
+        return ((lon >= -180.0 && lon <= 180.0));
     }
 
     @Override

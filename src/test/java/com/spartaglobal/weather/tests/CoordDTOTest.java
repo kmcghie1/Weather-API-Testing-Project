@@ -1,16 +1,23 @@
-package com.spartaglobal.weather.dto;
+package com.spartaglobal.weather.tests;
 
+import com.spartaglobal.weather.ConnectionManager;
+import com.spartaglobal.weather.Injector;
+import com.spartaglobal.weather.dto.CoordDTO;
+import com.spartaglobal.weather.dto.ProjectDTO;
+import com.spartaglobal.weather.util.PropertiesLoader;
 import org.junit.jupiter.api.*;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
 
 public class CoordDTOTest {
 
-    CoordDTO coordDTO;
+    private CoordDTO coordDTO;
+    private ProjectDTO projectDTO;
 
     @BeforeEach
     void setup() {
-        coordDTO = new CoordDTO();
+        projectDTO = Injector.injectDTO(ConnectionManager.getURL("Stuttgart",  PropertiesLoader.getProperties().getProperty("APIKey")));
+        coordDTO = projectDTO.getCoord();
     }
 
     @Nested
@@ -29,7 +36,7 @@ public class CoordDTOTest {
             }
 
             @ParameterizedTest
-            @ValueSource(doubles = {-30, 150})
+            @ValueSource(doubles = {-150, 150})
             @DisplayName("Test isLatWithinBounds invalid partitions")
             void testIsLatWithinBoundsInvalidPartitions(double value) {
                 coordDTO.setLat(value);
@@ -86,6 +93,13 @@ public class CoordDTOTest {
             void testIsLonWithinBoundsInvalidBoundaries(double value) {
                 coordDTO.setLon(value);
                 Assertions.assertFalse(coordDTO.isLonWithinBounds());
+            }
+
+            @Test
+            @DisplayName("Test name")
+            void testName() {
+                coordDTO.setLon(-181.0);
+                System.out.println(coordDTO.isLonWithinBounds());
             }
         }
 
