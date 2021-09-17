@@ -8,4 +8,5 @@ public interface iWeatherDTO {
     boolean isValidWeatherOption();
     boolean isValidDescription();
     boolean isValidIcon();
+    boolean isValidWeatherObject();
 }

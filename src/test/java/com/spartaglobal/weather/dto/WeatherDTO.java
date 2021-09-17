@@ -1,6 +1,8 @@
 package com.spartaglobal.weather.dto;
 
 import com.fasterxml.jackson.annotation.*;
+import com.spartaglobal.weather.util.WeatherEventLoader;
+
 import javax.annotation.processing.Generated;
 import java.lang.reflect.Array;
 import java.util.ArrayList;
@@ -84,6 +86,22 @@ public class WeatherDTO implements iWeatherDTO {
     public boolean isValidIcon(){
         ArrayList<String> validIconOptions = new ArrayList<>(Arrays.asList("01d", "02d", "03d", "04d", "09d", "10d", "11d", "13d", "50d", "01n", "02n", "03n", "04n", "09n", "10n", "11n", "13n", "50n"));
         return validIconOptions.contains(this.icon);
+    }
+
+    @Override
+    public boolean isValidWeatherObject(){
+        WeatherEventLoader weatherEventLoader = new WeatherEventLoader();
+        HashMap<Integer, String[]> fullWeatherMap = weatherEventLoader.getAllWeatherEvents();
+        if(!fullWeatherMap.containsKey(this.id)) {
+            return false;
+        } else {
+            String[] arrayToCheck = fullWeatherMap.get(this.id);
+            if(this.main == arrayToCheck[0] && this.description == arrayToCheck[1] && this.icon == arrayToCheck[2]) {
+                return true;
+            } else {
+                return false;
+            }
+        }
     }
 
     @JsonAnyGetter
