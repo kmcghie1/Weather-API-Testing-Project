@@ -1,5 +1,8 @@
 package com.spartaglobal.weather.dto;
 
+import com.spartaglobal.weather.ConnectionManager;
+import com.spartaglobal.weather.Injector;
+import com.spartaglobal.weather.util.PropertiesLoader;
 import org.junit.jupiter.api.*;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.ValueSource;
@@ -7,13 +10,15 @@ import org.mockito.Mockito;
 import static org.junit.jupiter.api.Assertions.*;
 
 class SystemDTOTest {
-    SystemDTO systemDTO;
-    SystemDTO mockSystemDTO;
+    private SystemDTO systemDTO;
+    //private SystemDTO mockSystemDTO;
+    private ProjectDTO projectDTO;
 
     @BeforeEach
     void setUp() {
         systemDTO = new SystemDTO();
-        mockSystemDTO = Mockito.mock(SystemDTO.class);
+        projectDTO = Injector.injectDTO(ConnectionManager.getURL("London", PropertiesLoader.getProperties().getProperty("APIKey")));
+        //mockSystemDTO = Mockito.mock(SystemDTO.class);
     }
 
     @Nested
@@ -22,22 +27,21 @@ class SystemDTOTest {
         @Test
         @DisplayName("Check type field class is Integer")
         void checkTypeFieldClassIsInteger() {
-            Mockito.when(mockSystemDTO.getType()).thenReturn(1);
-            assertEquals(Integer.class, mockSystemDTO.getType().getClass());
+            assertEquals(Integer.class, projectDTO.getSys().getType().getClass());
         }
 
         @ParameterizedTest
         @DisplayName("Type must be either 1 or 2")
         @ValueSource(ints = {1,2})
         void testTypeIsOneORTwoTrue(int numbers) {
-            assertTrue(systemDTO.isTypeWithinBoundaries(numbers));
+            assertTrue(projectDTO.getSys().isTypeWithinBoundaries(numbers));
         }
 
         @ParameterizedTest
         @DisplayName("Type must be either 1 or 2")
         @ValueSource(ints = {-1,0,3})
         void testTypeIsOneORTwoFalse(int numbers) {
-            assertFalse(systemDTO.isTypeWithinBoundaries(numbers));
+            assertFalse(projectDTO.getSys().isTypeWithinBoundaries(numbers));
         }
     }
 
@@ -47,36 +51,36 @@ class SystemDTOTest {
         @Test
         @DisplayName("Check id field class is Integer")
         void checkIdFieldClassIsInteger() {
-            Mockito.when(mockSystemDTO.getId()).thenReturn(1200);
-            assertEquals(Integer.class, mockSystemDTO.getId().getClass());
+            /*Mockito.when(mockSystemDTO.getId()).thenReturn(1200);*/
+            assertEquals(Integer.class, projectDTO.getSys().getId().getClass());
         }
 
         @ParameterizedTest
         @DisplayName("Id must be within ranges 0 and int max true")
         @ValueSource(ints = {0,1, Integer.MAX_VALUE-1,Integer.MAX_VALUE})
         void testIdIsInRangeTrue(int numbers) {
-            assertTrue(systemDTO.isIdWithinBoundaries(numbers));
+            assertTrue(projectDTO.getSys().isIdWithinBoundaries(numbers));
         }
 
         @ParameterizedTest
         @DisplayName("Id must be within ranges 0 and int max false")
         @ValueSource(ints = {-1,Integer.MAX_VALUE+1})
         void testIdIsInRangeFalse(int numbers) {
-            assertFalse(systemDTO.isIdWithinBoundaries(numbers));
+            assertFalse(projectDTO.getSys().isIdWithinBoundaries(numbers));
         }
     }
 
-    @Nested
+    /*@Nested
     @DisplayName("Message field")
     class messageTest {
 
         @Test
         @DisplayName("Test if message is the correct class type")
         void testIfMessageIsTheCorrectClassType() {
-            Mockito.when(mockSystemDTO.getMessage()).thenReturn(0.0035);
-            assertEquals(Double.class, mockSystemDTO.getMessage().getClass());
+            *//*Mockito.when(mockSystemDTO.getMessage()).thenReturn(0.0035);*//*
+            assertEquals(Double.class, projectDTO.getSys().getMessage().getClass());
         }
-    }
+    }*/
 
     @Nested
     @DisplayName("Country field")
@@ -84,22 +88,22 @@ class SystemDTOTest {
         @Test
         @DisplayName("Check country field class is String")
         void checkCountryFieldClassIsString() {
-            Mockito.when(mockSystemDTO.getCountry()).thenReturn("UK");
-            assertEquals(String.class, mockSystemDTO.getCountry().getClass());
+            /*Mockito.when(mockSystemDTO.getCountry()).thenReturn("UK");*/
+            assertEquals(String.class, projectDTO.getSys().getCountry().getClass());
         }
 
         @ParameterizedTest
         @DisplayName("Country code must be a two letter string of capitals should be True")
         @ValueSource(strings = {"AZ","TC"})
         void testCountryIsTwoLetterTrue(String countryCode) {
-            assertTrue(systemDTO.isCountryTwoLetters(countryCode));
+            assertTrue(projectDTO.getSys().isCountryTwoLetters(countryCode));
         }
 
         @ParameterizedTest
         @DisplayName("Country code must be a two letter string of capitals should be False")
         @ValueSource(strings = {"az","a"," "," az","azy", "ABc"})
         void testCountryIsTwoLetterFalse(String countryCode) {
-            assertFalse(systemDTO.isCountryTwoLetters(countryCode));
+            assertFalse(projectDTO.getSys().isCountryTwoLetters(countryCode));
         }
     }
 
@@ -109,43 +113,43 @@ class SystemDTOTest {
         @Test
         @DisplayName("Check sunrise field class is Long")
         void checkSunriseFieldClassIsLong() {
-            Mockito.when(mockSystemDTO.getSunrise()).thenReturn(9_999_999_999L);
-            assertEquals(Long.class, mockSystemDTO.getSunrise().getClass());
+            /*Mockito.when(mockSystemDTO.getSunrise()).thenReturn(9_999_999_999L);*/
+            assertEquals(Long.class, projectDTO.getSys().getSunrise().getClass());
         }
 
         @Test
         @DisplayName("Check Sunset field class is Long")
         void checkSunsetFieldClassIsLong() {
-            Mockito.when(mockSystemDTO.getSunset()).thenReturn(9_999_999_999L);
-            assertEquals(Long.class, mockSystemDTO.getSunset().getClass());
+            /*Mockito.when(mockSystemDTO.getSunset()).thenReturn(9_999_999_999L);*/
+            assertEquals(Long.class, projectDTO.getSys().getSunset().getClass());
         }
 
         @ParameterizedTest
         @DisplayName("Check Sunrise positive.")
         @ValueSource(longs = {1, 1_000_000_000, Long.MAX_VALUE})
         void testSunrisePositive(long time){
-            assertTrue(systemDTO.isSunrisePositive(time));
+            assertTrue(projectDTO.getSys().isSunrisePositive(time));
         }
 
         @ParameterizedTest
         @DisplayName("Check Sunrise positive false.")
         @ValueSource(longs = {-1, -1_000_000_000, -Long.MAX_VALUE})
         void testSunriseNegativeFalse(long time){
-            assertFalse(systemDTO.isSunrisePositive(time));
+            assertFalse(projectDTO.getSys().isSunrisePositive(time));
         }
 
         @ParameterizedTest
         @DisplayName("Check Sunset positive.")
         @ValueSource(longs = {1, 1_000_000_000, Long.MAX_VALUE})
         void testSunsetPositive(long time){
-            assertTrue(systemDTO.isSunsetPositive(time));
+            assertTrue(projectDTO.getSys().isSunsetPositive(time));
         }
 
         @ParameterizedTest
         @DisplayName("Check Sunset positive false.")
         @ValueSource(longs = {-1, -1_000_000_000, -Long.MAX_VALUE})
         void testSunriseNegative(long time){
-            assertFalse(systemDTO.isSunrisePositive(time));
+            assertFalse(projectDTO.getSys().isSunrisePositive(time));
         }
 
         // Commented for deletion
@@ -180,18 +184,18 @@ class SystemDTOTest {
         @Test
         @DisplayName("Sunrise before sunset test should be true")
         void testSunriseIsBeforeSunsetPasses() {
-            Mockito.when(mockSystemDTO.getSunrise()).thenReturn(1_000_000_000L);
-            Mockito.when(mockSystemDTO.getSunset()).thenReturn(1_000_000_001L);
-            assertTrue(systemDTO.isSunriseBeforeSunset(mockSystemDTO.getSunrise(), mockSystemDTO.getSunset()));
+            /*Mockito.when(mockSystemDTO.getSunrise()).thenReturn(1_000_000_000L);
+            Mockito.when(mockSystemDTO.getSunset()).thenReturn(1_000_000_001L);*/
+            assertTrue(systemDTO.isSunriseBeforeSunset(projectDTO.getSys().getSunrise(), projectDTO.getSys().getSunset()));
         }
 
-        @Test
+        /*@Test
         @DisplayName("Sunrise before sunset test should be false")
         void testSunriseIsBeforeSunsetFails() {
-            Mockito.when(mockSystemDTO.getSunrise()).thenReturn(1_000_000_001L);
-            Mockito.when(mockSystemDTO.getSunset()).thenReturn(1_000_000_000L);
-            assertFalse(systemDTO.isSunriseBeforeSunset(mockSystemDTO.getSunrise(), mockSystemDTO.getSunset()));
-        }
+            *//*Mockito.when(mockSystemDTO.getSunrise()).thenReturn(1_000_000_001L);
+            Mockito.when(mockSystemDTO.getSunset()).thenReturn(1_000_000_000L);*//*
+            assertFalse(systemDTO.isSunriseBeforeSunset(projectDTO.getSys().getSunrise(), projectDTO.getSys().getSunset()));
+        }*/
     }
 
     @AfterEach
