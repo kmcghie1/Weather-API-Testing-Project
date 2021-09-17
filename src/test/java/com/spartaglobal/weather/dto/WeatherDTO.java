@@ -2,6 +2,9 @@ package com.spartaglobal.weather.dto;
 
 import com.fasterxml.jackson.annotation.*;
 import javax.annotation.processing.Generated;
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -44,6 +47,18 @@ public class WeatherDTO implements iWeatherDTO {
     @JsonProperty("icon")
     public String getIcon() {
         return icon;
+    }
+
+    @Override
+    public boolean isValidWeatherOption() {
+        ArrayList<String> validWeatherOptions = new ArrayList<>(Arrays.asList("Thunderstorm", "Drizzle", "Rain", "Snow", "Mist", "Smoke", "Haze", "Dust", "Fog", "Sand", "Dust", "Ash", "Squall", "Tornado", "Clear", "Clouds"));
+
+        if(validWeatherOptions.contains(this.main)){
+            return true;
+        }
+        else{
+            return false;
+        }
     }
 
     @JsonAnyGetter
