@@ -65,7 +65,7 @@ public class WindDTOTest
         @Test
         @DisplayName("Testing Speed is Double")
         void testSpeedIsDouble(){
-            Assertions.assertEquals(Double.class, windDTO.getDeg().getClass());
+            Assertions.assertEquals(Double.class, windDTO.getSpeed().getClass());
         }
     }
 
